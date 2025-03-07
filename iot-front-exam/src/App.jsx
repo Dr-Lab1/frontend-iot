@@ -30,7 +30,7 @@ function App() {
         setError(err.message);
         setLoading(false);
       });
-  }, []);
+  });
 
   const formatDate = (dateString) => {
     const timestamp = dateString;
@@ -241,10 +241,10 @@ function App() {
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Humidité</th>
-                            <th scope="col">Temperature</th>
-                            <th scope="col">pollution</th>
-                            <th scope="col">Lumière</th>
+                            <th scope="col">Humidité (%)</th>
+                            <th scope="col">Temperature (°C)</th>
+                            <th scope="col">Pollution (ug/m3)</th>
+                            <th scope="col">Lumière (lm/m2)</th>
                             <th scope="col">Date</th>
                           </tr>
                         </thead>
