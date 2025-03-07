@@ -4,8 +4,8 @@ import ReactECharts from "echarts-for-react";
 const PieChart = (datas) => {
   const options = {
     title: {
-      text: "Referer of a Website",
-      subtext: "Fake Data",
+      text: "D'après les données collectées...",
+      subtext: "Détails",
       left: "center",
     },
     tooltip: {
@@ -21,11 +21,10 @@ const PieChart = (datas) => {
         type: "pie",
         radius: "50%",
         data: [
-          { value: 1048, name: "Search Engine" },
-          { value: 735, name: "Direct" },
-          { value: 580, name: "Email" },
-          { value: 484, name: "Union Ads" },
-          { value: 300, name: "Video Ads" },
+          { value: 735, name: "Temperature" },
+          { value: 580, name: "Lumière" },
+          { value: 484, name: "Pollution" },
+          { value: 300, name: "Humidité" },
         ],
         emphasis: {
           itemStyle: {

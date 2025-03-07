@@ -8,6 +8,7 @@ import ReportsChart from './components/ReportsChart'
 import PieChart from './components/PieChart'
 import axios from "axios";
 import LineChart from './components/LineChart'
+import dayjs from "dayjs";
 
 
 function App() {
@@ -31,6 +32,12 @@ function App() {
       });
   }, []);
 
+  const formatDate = (dateString) => {
+    const timestamp = dateString;
+
+    return dayjs(timestamp).format("YYYY-MM-DD HH:mm:ss")
+  }
+
   if (loading) return <p>Chargement en cours...</p>;
   if (error) return <p>Erreur : {error}</p>;
 
@@ -41,7 +48,7 @@ function App() {
         <div className="d-flex align-items-center justify-content-between">
           <a href="index.html" className="logo d-flex align-items-center">
             <img src="assets/img/logo.png" alt="" />
-            <span className="d-none d-lg-block">Groupe-8-IoT</span> 
+            <span className="d-none d-lg-block">Groupe-8-IoT</span>
           </a>
         </div>
 
@@ -188,23 +195,9 @@ function App() {
                 <div className="col-12">
                   <div className="card">
 
-                    <div className="filter">
-                      <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
-                      <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                        <li className="dropdown-header text-start">
-                          <h6>Filter</h6>
-                        </li>
-
-                        <li><a className="dropdown-item" href="#">Today</a></li>
-                        <li><a className="dropdown-item" href="#">This Month</a></li>
-                        <li><a className="dropdown-item" href="#">This Year</a></li>
-                      </ul>
-                    </div>
-
                     <div className="card-body">
-                      <h5 className="card-title">Reports <span>/Today</span></h5>
+                      <h5 className="card-title">Reports</h5>
 
-                      {/* <ReportsChart /> */}
                       <PieChart datas={datas} />
 
                     </div>
@@ -252,6 +245,7 @@ function App() {
                             <th scope="col">Temperature</th>
                             <th scope="col">pollution</th>
                             <th scope="col">Lumière</th>
+                            <th scope="col">Date</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -260,10 +254,11 @@ function App() {
                               datas?.last5Lines?.map((line) => (
                                 <tr>
                                   <th scope="row">#{line.ID}</th>
-                                  <td>{line.humidute}</td>
+                                  <td>{line.humidite}</td>
                                   <td>{line.temperature}</td>
                                   <td>{line.pollution}</td>
                                   <td>{line.lumiere}</td>
+                                  <td>{formatDate(line.timestamp)}</td>
                                 </tr>
                               ))
 
