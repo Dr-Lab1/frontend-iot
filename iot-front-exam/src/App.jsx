@@ -30,7 +30,7 @@ function App() {
         setError(err.message);
         setLoading(false);
       });
-  });
+  }, []);
 
   const formatDate = (dateString) => {
     const timestamp = dateString;
