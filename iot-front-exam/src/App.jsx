@@ -107,28 +107,6 @@ function App() {
                   </div>
                 </div>
 
-                <div className="col-xxl-4 col-md-6">
-                  <div className="card info-card revenue-card">
-
-                    <div className="card-body">
-                      <h5 className="card-title">Lumière</h5>
-
-                      <div className="d-flex align-items-center">
-                        <div className="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                          {/* <i className="bi bi-currency-dollar"></i> */}
-                          <i class="bi bi-lightbulb-fill"></i>
-                        </div>
-                        <div className="ps-3">
-                          <h6>
-                            {datas.avgLumiere.toPrecision(4)}
-                          </h6>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-
                 <div className="col-xxl-4 col-xl-12">
 
                   <div className="card info-card customers-card">
@@ -171,26 +149,29 @@ function App() {
                   </div>
                 </div>
 
-                <div className="col-xxl-8 col-md-12">
-                  <div className="card info-card revenue-card">
+                <div className='row d-flex justify-content-center'>
+                  <div className="col-xxl-8 col-md-12">
+                    <div className="card info-card revenue-card">
 
-                    <div className="card-body">
-                      <h5 className="card-title">Total champs</h5>
+                      <div className="card-body">
+                        <h5 className="card-title">Total champs</h5>
 
-                      <div className="d-flex align-items-center justify-content-center">
-                        <div className="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                          <i class="bi bi-list-ol"></i>
-                        </div>
-                        <div className="ps-3">
-                          <h6>
-                            {datas.dataLength}
-                          </h6>
+                        <div className="d-flex align-items-center justify-content-center">
+                          <div className="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="bi bi-list-ol"></i>
+                          </div>
+                          <div className="ps-3">
+                            <h6>
+                              {datas.dataLength}
+                            </h6>
+                          </div>
                         </div>
                       </div>
-                    </div>
 
+                    </div>
                   </div>
                 </div>
+
 
                 <div className="col-12">
                   <div className="card">
@@ -244,7 +225,6 @@ function App() {
                             <th scope="col">Humidité (%)</th>
                             <th scope="col">Temperature (°C)</th>
                             <th scope="col">Pollution (ug/m3)</th>
-                            <th scope="col">Lumière (lm/m2)</th>
                             <th scope="col">Date</th>
                           </tr>
                         </thead>
@@ -257,7 +237,6 @@ function App() {
                                   <td>{line.humidite}</td>
                                   <td>{line.temperature}</td>
                                   <td>{line.pollution}</td>
-                                  <td>{line.lumiere}</td>
                                   <td>{formatDate(line.timestamp)}</td>
                                 </tr>
                               ))
